@@ -10,7 +10,8 @@
   ],
   "require": {
     "codexten/yii-aws": ">=2.0",
-    "codexten/yii-mail": ">=2.0"
+    "ofat/yii2-yashop-ses": "*",
+    "codexten/yii-mailqueue": "2.0.*"
   },
   "autoload": {
     "psr-4": {
