@@ -22,11 +22,8 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
-      "mail": [
-        "$aws",
-        "config/mail.php"
-      ],
+    "config-plugin": {
+      "mailer": "config/mailer.php",
       "params": "config/params.php"
     }
   }
