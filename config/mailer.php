@@ -1,12 +1,19 @@
 <?php
 
-use codexten\yii\mailjet\AwsMailer;
+/* @var $params array */
 
 return [
     'awsMailer' => [
-        'class' => AwsMailer::class,
-        'access_key' => $params['aws.key'],
-        'secret_key' => $params['aws.secret'],
-//        'host' => 'email.us-east-1.amazonaws.com' // not required
+        'class' => '\codexten\yii\mailqueue\MailQueue',
+        'useFileTransport' => false,
+        'htmlLayout' => false,
+        'transport' => [
+            'class' => 'Swift_SmtpTransport',
+            'host' => $params['aws.ses.host'],
+            'username' => $params['aws.ses.username'],
+            'password' => $params['aws.ses.password'],
+            'port' => 587,
+            'encryption' => 'tls',
+        ],
     ]
 ];
